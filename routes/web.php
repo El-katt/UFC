@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +27,12 @@ Route::get('/supplier/showall', [SupplierController::class, 'showAll']);
 Route::get('/supplier/{id}/more', [SupplierController::class, 'showMore']);
 Route::get('/supplier/delete/{id}', [SupplierController::class, 'destroy']);
 Route::post('/supplier/update/{id}', [SupplierController::class, 'update']);
+
+
+
+Route::get('/Product/add', [ProductController::class, 'add']);
+Route::post('/product/save', [ProductController::class, 'store']);
+Route::get('/Product/showall', [ProductController::class, 'showAll']);
+Route::get('/Product/{id}/more', [ProductController::class, 'showMore']);
+Route::get('/product/delete/{id}', [ProductController::class, 'destroy']);
+Route::post('/product/update/{id}', [ProductController::class, 'update']);

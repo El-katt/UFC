@@ -31,6 +31,16 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                @auth
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto  " style="margin-left: 400px;">
+                            <li class="nav-item" ><a href="/home" style="margin-right: 20px;text-decoration: none;"> home</a></li>
+                            <li class="nav-item"><a href="/supplier/showall" style="margin-right: 20px;text-decoration: none;"> Suppliers</a></li>
+                            <li class="nav-item"><a href="/Product/showall" style="margin-right: 20px;text-decoration: none;"> Product</a></li>
+                        </ul>
+                    </div>
+                @endauth
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

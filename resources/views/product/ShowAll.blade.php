@@ -16,24 +16,25 @@
     <table class="table table-striped">
     <thead>
     <tr>
-    <th>Name </th>
-    <th>Address 1</th>
-    <th>city</th>
-    <th>Phone number </th>
-    <th>Interlocuteur</th>
+    <th>Product Name </th>
+    <th>Product Price</th>
+    <th>Available</th>
+    <th> </th>
+    <th><th>
     <th>More info </th>
     </tr>
     </thead>
     <tbody>
-    @foreach ($supp as $supplier)
+    @foreach ($products as $product)
     <tr>
-        <th scope="row">{{$supplier->name_supplier}}</th>
+        <th scope="row">{{$product->name_product}}</th>
 
-        <td>{{$supplier->Addr1_supplier}}</td>
-        <td>{{$supplier->city_supplier}}</td>
-        <td>{{$supplier->tele_supplier}}</td>
-        <td>{{$supplier->interlocutor}}</td>
-        <td><a href="/supplier/{{$supplier->id}}/more" class="btn btn-success">more</a></td>
+        <td>{{$product->sell_price_product}}</td>
+        <td>{{$product->available==1 ? 'True' : 'False'}}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><a href="/Product/{{$product->id}}/more" class="btn btn-success">more</a></td>
     </tr>
     @endforeach
 

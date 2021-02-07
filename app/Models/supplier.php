@@ -20,4 +20,8 @@ class supplier extends Model
         'interlocutor',
         'tele_interlocutor'
     ];
+    public function product()
+    {
+        return $this->belongsToMany(product::class);
+    }
 }
