@@ -20,5 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/supplier/add' , [SupplierController::class , 'add']);
-Route::post('/supplier/save', [SupplierController::class , 'store']);
+Route::get('/supplier/add', [SupplierController::class, 'add']);
+Route::post('/supplier/save', [SupplierController::class, 'store']);
+Route::get('/supplier/showall', [SupplierController::class, 'showAll']);
+Route::get('/supplier/{id}/more', [SupplierController::class, 'showMore']);
+Route::get('/supplier/delete/{id}', [SupplierController::class, 'destroy']);
+Route::post('/supplier/update/{id}', [SupplierController::class, 'update']);

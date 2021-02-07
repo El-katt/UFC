@@ -64,7 +64,7 @@
                                 <div class="card-body">
                                   <h5 class="card-title">Supplier</h5>
                                   <a href="/supplier/add" class="badge badge-dark "><h5>Add</h5></a>
-                                  <a href="/" class="badge badge-dark"><h5>Show  ALL</h5></a>
+                                  <a href="/supplier/showall" class="badge badge-dark"><h5>Show  ALL</h5></a>
 
                                   <p class="card-text"></p>
                                   <p class="card-text"><small class="text-muted"></small></p>
