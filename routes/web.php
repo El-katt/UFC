@@ -48,5 +48,6 @@ Route::get('/stock/delete/{id}', [ProductsupplierController::class, 'destroy']);
 Route::get('/command/new', [cammandgestion::class, 'new']);
 
 Route::post('/command/destination', [cammandgestion::class, 'saveDestination']);
-Route::get('/command/{id}' , [cammandgestion::class, 'CommandDetail' ]);
+Route::get('/command/detail' , [cammandgestion::class, 'CommandDetail' ]);
 Route::post('/command/orderd_by' , [cammandgestion::class, 'saveOrderd' ]);
+Route::post('/command/save' , [cammandgestion::class, 'store' ]);

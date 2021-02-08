@@ -18,6 +18,13 @@
                   <p style="color: red">{{ $message}}</p>
                  @enderror
                 </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Number of item </label>
+                    <input type="number" class="form-control" placeholder="Number of command" name="Qte" value="{{old('Qte')}}" >
+                    @error('Qte')
+                    <p style="color: red">{{ $message}}</p>
+                   @enderror
+                  </div>
 
                 <button type="submit" class="btn btn-primary">next</button>
               </form>

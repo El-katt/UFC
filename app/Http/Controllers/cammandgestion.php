@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\distination;
 use App\Models\commande;
-
-
+use App\Models\Product;
+use App\Models\Commandline;
+use App\Models\supplier;
 use Illuminate\Validation\ValidationException;
 
 class cammandgestion extends Controller
@@ -34,17 +35,31 @@ class cammandgestion extends Controller
             $dis->fax_dest = request('fax_dest');
         }
         $dis->save();
-        return redirect('/command/{{$dis->id}}');
+        return redirect('command/detail')->with(['distination' => $dis]);
     }
-    public function CommandDetail($id)
+    public function CommandDetail()
     {
-        return view('desitination.commanddetail', ['id_distination' => $id]);
+        return view('desitination.commanddetail', ['id_distination' => session()->get('distination')->id]);
     }
     public function saveOrderd()
     {
         $command = commande::create(['distination_id' => request('id_distination'), "ordered_by" => request('ordered_by')]);
         $command->save();
-        return 'it\'s work';
+        $products = Product::all();
+        return view('desitination.commandLine', ['command' => $command, 'products' => $products, 'Qte' => request('Qte')]);
+    }
+    public function store()
+    {
+
+        $products = Product::all();
+        for ($x = 0; $x < request('Qte'); $x++) {
+            $Commandline = Commandline::create(['commande_id' => request('commande_id') ]);
+            $Commandline->product_id=request('item' . $x);
+            $Commandline->qte_product=request('Qteitem' . $x);
+            $Commandline->price = $products->where('id', request('item' . $x))->first()->sell_price_product;
+            $Commandline->save();
+        }
+        return redirect('/home');
     }
 
     public function ValidationForm()
