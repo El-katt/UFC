@@ -73,6 +73,22 @@
                             </div>
                           </div>
                     </div>
+                    <div id="Command">
+                        <div class="card mb-3" >
+                            <div class="row no-gutters">
+                              <div class="col-md-5">
+                                <img src="{{ asset('img/supplier.jpg') }}" class="card-img" alt="...">
+                              </div>
+                              <div class="col-md-7">
+                                <div class="card-body">
+                                  <h5 class="card-title">Command</h5>
+                                  <a href="/command/new" class="badge badge-dark "><h5>New</h5></a>
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
                 </div>
             </div>
         </div>

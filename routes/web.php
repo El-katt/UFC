@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductsupplierController;
+
+use App\Http\Controllers\cammandgestion;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,3 +44,9 @@ Route::get('/stock/showall', [ProductsupplierController::class, 'showAll']);
 Route::get('/stock/add', [ProductsupplierController::class, 'add']);
 Route::post('/stock/save', [ProductsupplierController::class, 'store']);
 Route::get('/stock/delete/{id}', [ProductsupplierController::class, 'destroy']);
+
+Route::get('/command/new', [cammandgestion::class, 'new']);
+
+Route::post('/command/destination', [cammandgestion::class, 'saveDestination']);
+Route::get('/command/{id}' , [cammandgestion::class, 'CommandDetail' ]);
+Route::post('/command/orderd_by' , [cammandgestion::class, 'saveOrderd' ]);
