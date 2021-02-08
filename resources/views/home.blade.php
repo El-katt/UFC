@@ -45,8 +45,8 @@
                               <div class="col-md-7">
                                 <div class="card-body">
                                   <h5 class="card-title">Stock</h5>
-
-                                  <a href="/" class="badge badge-dark "><h5>Show </h5></a>
+                                  <a href="/stock/add" class="badge badge-dark "><h5>Add</h5></a>
+                                  <a href="/stock/showall" class="badge badge-dark "><h5>Show </h5></a>
                                   <p class="card-text"></p>
                                   <p class="card-text"><small class="text-muted"></small></p>
                                 </div>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductsupplierController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,3 +37,8 @@ Route::get('/Product/showall', [ProductController::class, 'showAll']);
 Route::get('/Product/{id}/more', [ProductController::class, 'showMore']);
 Route::get('/product/delete/{id}', [ProductController::class, 'destroy']);
 Route::post('/product/update/{id}', [ProductController::class, 'update']);
+
+Route::get('/stock/showall', [ProductsupplierController::class, 'showAll']);
+Route::get('/stock/add', [ProductsupplierController::class, 'add']);
+Route::post('/stock/save', [ProductsupplierController::class, 'store']);
+Route::get('/stock/delete/{id}', [ProductsupplierController::class, 'destroy']);

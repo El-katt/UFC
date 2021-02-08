@@ -19,4 +19,7 @@ class Product extends Model
     {
         return $this->belongsToMany(supplier::class);
     }
+    public function stock(){
+        return $this->belongTo(productsupplier::class);
+    }
 }
